@@ -2,6 +2,9 @@
 Changelog for package rqt_console
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.2.1 (2024-02-07)
 ------------------
 * Add a test dependency on pytest. (`#45 <https://github.com/ros-visualization/rqt_console/issues/45>`_)
