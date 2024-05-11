@@ -38,7 +38,7 @@ from python_qt_binding import loadUi
 from python_qt_binding.QtGui import QCursor, QIcon
 from python_qt_binding.QtWidgets import (QApplication, QFileDialog, QHeaderView,
                                          QMenu, QMessageBox, QTableView, QWidget)
-from python_qt_binding.QtCore import QRegExp, Qt, qWarning
+from python_qt_binding.QtCore import QRegularExpression, Qt, qWarning
 
 import time
 import datetime
@@ -438,11 +438,11 @@ class ConsoleWidget(QWidget):
                 if exclude:
                     filter_index = self._add_exclude_filter(selectiontype.lower())
                     filter_widget = self._exclude_filters[filter_index][1].findChildren(
-                        QWidget, QRegExp('.*FilterWidget.*'))[0]
+                        QWidget, QRegularExpression('.*FilterWidget.*'))[0]
                 else:
                     filter_index = self._add_highlight_filter(selectiontype.lower())
                     filter_widget = self._highlight_filters[filter_index][1].findChildren(
-                        QWidget, QRegExp('.*FilterWidget.*'))[0]
+                        QWidget, QRegularExpression('.*FilterWidget.*'))[0]
                 filter_widget.set_regex(False)
                 filter_widget.set_text(message)
 
@@ -468,11 +468,11 @@ class ConsoleWidget(QWidget):
 
             if exclude:
                 filter_widget = self._exclude_filters[filter_index][1].findChildren(
-                    QWidget, QRegExp('.*FilterWidget.*'))[0]
+                    QWidget, QRegularExpression('.*FilterWidget.*'))[0]
                 filter_widget.select_item(selection)
             else:
                 filter_widget = self._highlight_filters[filter_index][1].findChildren(
-                    QWidget, QRegExp('.*FilterWidget.*'))[0]
+                    QWidget, QRegularExpression('.*FilterWidget.*'))[0]
                 filter_widget.select_item(selection)
 
     def _rightclick_menu(self, event):

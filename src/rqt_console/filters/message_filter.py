@@ -30,7 +30,7 @@
 # ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-from python_qt_binding.QtCore import QRegExp
+from python_qt_binding.QtCore import QRegularExpression
 from .base_filter import BaseFilter
 
 
@@ -97,7 +97,7 @@ class MessageFilter(BaseFilter):
                     temp = '.*' + temp
                 if temp[-1] != '$':
                     temp += '.*'
-                if QRegExp(temp).exactMatch(value):
+                if QRegularExpression(temp).exactMatch(value):
                     return True
             else:
                 if value.find(self._text) != -1:
