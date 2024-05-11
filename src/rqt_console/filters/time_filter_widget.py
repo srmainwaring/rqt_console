@@ -70,10 +70,10 @@ class TimeFilterWidget(QWidget):
             maxtime = str(maxtime).split('.')
 
             time = QDateTime()
-            time.setTime_t(int(mintime[0]))
+            time.setTime(int(mintime[0]))
             mintime = time.addMSecs(int(str(mintime[1]).zfill(9)[:3]))
             self.start_datetime.setDateTime(mintime)
-            time.setTime_t(int(maxtime[0]))
+            time.setTime(int(maxtime[0]))
             maxtime = time.addMSecs(int(str(maxtime[1]).zfill(9)[:3]))
             self.stop_datetime.setDateTime(maxtime)
         else:

@@ -105,7 +105,7 @@ class Message(QObject):
         if None in self.__stamp:
             return None
         dt = QDateTime()
-        dt.setTime_t(stamp[0])
+        dt.setTime(stamp[0])
         dt.addMSecs(int(float(stamp[1]) / 10**6))
         return dt
 
